@@ -1,0 +1,223 @@
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #222;
+}
+.navbar {
+	background-color: rgba(231, 228, 43, 0.9) !important;
+}
+.navbar-header li a {
+    color: white !important;
+}
+.navbar li a:hover {
+    color: black !important;
+}
+.carousel-inner img {
+	width: 100%;
+}
+
+.carousel-caption{
+	position: absolute;
+	top: 30%;
+}
+.carousel-caption h2{
+	font-size: 400%;
+	color: wheat;
+	text-shadow: 5px 5px 15px #000;
+}
+.carousel-caption h3{
+	
+	text-shadow: 2px 2px 15px #000;
+}
+.carousel-caption .btn{
+	font-size: 120%;
+}
+.btn-outline-light{
+	color: rgb(115, 179, 32);
+}
+.btn-primary{
+	background-color:rgba(231, 228, 43, 0.9) ;
+	color: black;
+	border: 1px solid white;
+}
+.btn-primary:hover{
+	background-color:rgba(61, 60, 1, 0.986) ;
+}
+/*div next
+////////////////
+///////////////
+*/
+.audio-main{
+	width: 100%;
+	height: 290px;
+	background-color: #249c4c;
+}
+.poster{
+	margin-left: 487px;
+}
+.poster img{
+	width: 130px;
+	height: 130px;
+}
+.song-title{
+	width: 600px;
+	background-color: #fff;
+	text-align: center;
+	position: relative;
+	top: 10px;
+	left: 23%;
+	font-family: monospace;
+}
+.btn-audio-player{
+	position: relative;
+	top: 10%;
+	padding-top: 30px;
+	left: 23%;
+	border-radius: 50%;
+}
+.btn-audio-player button{
+	border-radius: 15px;
+	background-size: cover;
+}
+#currentTime{
+	margin-top: 13px;
+	padding-left: 260px;
+}
+#repeatBtn{
+	 padding-right: 300px;
+	 margin-top: -40px;
+	 float: right;
+}
+#repeatBtn button{
+	background-color: #249c4c;
+	border-style: none;
+}
+.seek-bar{
+	width: 430px;
+	height: 5px;
+	background-color: pink;
+	margin-left: 400px;
+	margin-top: -20px;
+	float: left;
+}
+.fill{
+	height: 5px;
+	border-radius: 20px;
+	background-color: royalblue;
+}
+.hot-album{
+	width: 100%;
+	height: 1200px;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	justify-content: center;
+	background-color: rgb(243, 243, 94);
+}
+
+.hot-album img{
+	flex: 25%;
+	overflow: hidden;
+	cursor: pointer;
+	width: 300px;
+	height: 300px;
+	margin: 40px 20px 40px 20px;
+}	
+.label-hot-album{
+	background-color: rgb(243, 243, 94);
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.border{
+	width: 180px;
+	height: 4px;
+	background-color: #333;
+	margin: auto;
+}
+footer{
+	width: 100%;
+	height: 200px;
+	margin: auto;
+	padding: 0 20px;
+	background: rgb(240, 238, 163);
+}
+.social-media a{
+	margin-left: 30px;
+}
+@media(max-width:1300px){
+	.navbar-brand{
+		margin-right: 50px;
+		font-size: 100%;
+	}
+	.carousel-caption{
+		top: 20%;
+	}
+	.carousel-caption h2{
+		
+		font-size: 220%;
+	}
+	.carousel-caption h3{
+		font-size: 80%;
+	}
+	.carousel-caption .btn{
+		font-size: 70%;
+	}
+	.btn-outline-light{
+		font-size: 70%;
+	}
+	.btn-primary{
+		font-size: 70%;
+	}
+	.audio-main{
+		font-size: 60%;
+	}
+	.song-title{
+		width: 300px;
+	
+	}
+	.btn-audio-player{
+		position: relative;
+		top: 10%;
+		padding-top: 90px;
+		left: 25%;
+	}
+	.hot-album img{
+		
+		width: 100px;
+		height: 100px;
+		margin: 40px 40px 40px 40px;
+	}	
+}
+
+@media(max-width:600px){
+	.navbar-brand{
+		margin-right: 50px;
+		font-size: 100%;
+	}
+	.carousel-caption{
+		top: 20%;
+	}
+	.carousel-caption h2{
+		
+		font-size: 200%;
+	}
+	.carousel-caption h3{
+		font-size: 80%;
+	}
+	.carousel-caption .btn{
+		font-size: 50%;
+	}
+	.btn-outline-light{
+		font-size: 70%;
+	}
+	.btn-primary{
+		font-size: 70%;
+	}
+	.song-title{
+		width: 200px;
+	
+	}
+}
+
