@@ -108,8 +108,8 @@
                 </button>
                
             </div>
-            <div class="seek-bar">
-                <div id= "fill" class="fill"></div>
+            <div class="seek-bar" >
+                <div id= "fill" class="fill" type="range" min="0" max="100"></div>
                 <div id="handle" class="handle"></div>
             </div>
             <div id="currentTime">
@@ -129,7 +129,7 @@
     </div>
     <div class="hot-album">
         <div>
-            <img src="img/bp.png" alt="">
+            <img src="img/bp.png" alt="" id="bp">
         </div>
         <div>
             <img src="img/bb.jpg" alt="">
@@ -167,8 +167,17 @@
        
         
     </div>
-    
-
+   
+   
+   <div id="detailAlbum" style="width: 1000px ; height: 400px;">
+    <table>
+        <tr>
+            <th>3123123</th>
+            <th>213213123</th>
+        </tr>
+        <button id="b1">click meme</button>
+    </table>
+    </div>
     <footer id="contact">
         <div class="container">
             <div class="row">
@@ -198,6 +207,7 @@
     var songTitle = document.getElementById("songTitle");
     var fillBar =document.getElementById("fill");
     var handleDot = document.getElementById("handle");
+
     
     var song = new Audio();
     var currentSong = 0;
@@ -211,6 +221,19 @@
         song.play();
         
     }
+    $(document).ready(function(){
+        $("#detailAlbum").hide()
+        $("#bp").click(function(){
+            $("#detailAlbum").show()
+            $("#hot-album").hide()
+            $(".hot-album").hide()
+        });
+        $("#b1").click(function(){
+            $("#detailAlbum").hide()
+            $(".hot-album").show()
+            $("#hot-album").show()
+        });
+    });
     function playPauseSong()
     {        
             if(song.paused){
@@ -233,6 +256,7 @@
             if(song.ended)
                 next();
         });
+   
     function convertTime(seconds ){
         var min = Math.floor(seconds/60);
         var sec  = seconds % 60;
