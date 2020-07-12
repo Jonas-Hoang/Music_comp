@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Music_comp
+{
+    public partial class Detail : System.Web.UI.Page
+    {
+        SqlCommand cmd = new SqlCommand();
+        SqlConnection cnn = new SqlConnection();
+        SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            cnn.ConnectionString = "Data Source=DESKTOP-73HCV5N\\SQLEXPRESS;Initial Catalog=nguoi_dung;Integrated Security=True";
+            cnn.Open();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void load_data()
+        {
+            cmd.CommandText = "SELECT * FROM dbo.Song";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
+
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            cmd.CommandText = "DELETE dbo.Song WHERE SingerName = '"+SingerName.Text+"'";
+            cmd.Connection = cnn;
+            cmd.ExecuteNonQuery();
+            
+            load_data();
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            if (SingerName.Text == "" || ddlAlbumName.Text == "" )
+            {
+                string Error = string.Empty;
+                Error = "Bạn điền thiếu thông tin";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + Error + "');", true);
+            }
+            else
+            {
+                cmd.CommandText = "INSERT INTO dbo.Song ( SingerName, AlbumName ,  SongFileName) VALUES  ( '" + SingerName.Text + "' , '" + ddlAlbumName.SelectedValue + "' , 'mp3/" + fileSongUpload.PostedFile.FileName + "'  )";
+                cmd.Connection = cnn;
+                cmd.ExecuteNonQuery();
+                SingerName.Text = "";
+                TenAlbum.Text = "";
+                load_data();
+            }
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+        public void load_album()
+        {
+            cmd.CommandText = "SELECT * FROM dbo.Album";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            GridView3.DataSource = dt;
+            GridView3.DataBind();
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            
+        }
+       
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            string query = "INSERT INTO dbo.Album(AlbumName, ImageName)VALUES('" + TenAlbum.Text + "', '" + fileImageUpload0.PostedFile.FileName + "')";
+            cmd = new SqlCommand(query, cnn);
+            cmd.ExecuteNonQuery();
+            TenAlbum.Text = "";
+           
+            load_album();
+        }
+    }
+}
