@@ -1,4 +1,5 @@
-var songs = ["mp3/RT.mp3","mp3/HYLT.mp3", "mp3/MYH.mp3","mp3/Why.mp3"];
+    
+    var songs = ["mp3/RT.mp3","mp3/HYLT.mp3","mp3/MYH.mp3","mp3/Why.mp3"];
     var poster = ["img/bbag.jpg","img/bp.png","img/niziu.jpg", "img/bb.jpg"]
     var songName =["RingTone","How you like that - BlackPink", "Make you happy - Niziu", "Why - Bệt band"]
 
@@ -21,7 +22,6 @@ var songs = ["mp3/RT.mp3","mp3/HYLT.mp3", "mp3/MYH.mp3","mp3/Why.mp3"];
     }
     $(document).ready(function(){
         $("#uploadMusic").hide()
-      
         $("#upload").click(function(){
             $("#uploadMusic").show()
             $("#slides").hide()
@@ -93,11 +93,11 @@ var songs = ["mp3/RT.mp3","mp3/HYLT.mp3", "mp3/MYH.mp3","mp3/Why.mp3"];
     function next(){
         
         currentSong++;
-        if(currentSong > songs.length){
+        if(currentSong >= songs.length){
             currentSong = 0;
         }
         playSong();
-        $("#play i").attr("class","fa fa-pause");
+        
         $("#poster img").attr("src",poster[currentSong]);
     }
     function pre(){
@@ -107,7 +107,7 @@ var songs = ["mp3/RT.mp3","mp3/HYLT.mp3", "mp3/MYH.mp3","mp3/Why.mp3"];
             currentSong = songs.length;
         }
         playSong();
-        $("#play i").attr("class","fa fa-pause");
+        
         $("#poster img").attr("src",poster[currentSong]);
     }
     function thu_cai(){

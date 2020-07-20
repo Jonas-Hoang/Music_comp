@@ -24,7 +24,7 @@ VALUES  (  -- AlbumID - int
           'MADE', -- AlbumName - varchar(200)
           'bbang.jpg'  -- ImageName - varchar(500)
           )
-SELECT * FROM dbo.Album
+SELECT * FROM dbo.Song
 GO
 CREATE TABLE Song(
 	SongID INT IDENTITY(1,1),
