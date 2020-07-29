@@ -11,14 +11,14 @@ Lớp: CNTT K58
 -PHP
 -MySQL
 ## Phần 2: Các chức năng đã hoàn thành
--Login
--Load nhạc
--Play nhạc
--giao diện
+- Login
+- Sign-up(md5 password)
+- Load nhạc
+- Play nhạc
+- Giao diện
 ## Phần 3: Các chức năng chưa hoàn thành
-1. Sign up
-2. Upload nhạc
-3. Search
+1. Upload nhạc
+2. Search
 ## Hướng dẫn sử dụng
 - Add database trong mysql file mysql_database và sql trong file database (vì e mới làm load nhạc lên bằng sql server)
 
